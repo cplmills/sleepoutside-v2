@@ -110,8 +110,69 @@ button {
   fill: gray;
 }
 
+.logo-spinner {
+  animation-duration: 3s;
+  animation-name: spinner;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cart-item-count {
+  border-radius: 50%;
+  position: absolute;
+  left: -5px;
+  top: 1px;
+  display: block;
+  color: black;
+  background-color: #f0a868;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  line-height: 1em;
+  font-weight: bolder;
+}
+
 /* End cart icon styles */
 
+/* Begin breadcrumbs CSS */
+.container {
+  border-bottom: 2px solid #f0a868;
+}
+
+.breadcrumb,
+#breadcrumbol {
+  list-style: none;
+  padding: 0px;
+  margin: 10px;
+}
+
+#breadcrumbol > li {
+  display: inline-block;
+}
+
+#breadcrumbol > li + li:before {
+  padding: 0 5px;
+  color: #f0a868;
+  content: "/\00a0";
+}
+
+#breadcrumbol > li > a {
+  text-decoration: none;
+  color: #414141;
+}
+
+#breadcrumbol > li > a:hover {
+  text-decoration: underline;
+  color: #f0a868;
+}
+/* End breadcrumbs */
 .mission {
   padding: 0 0.5em;
   /* margin: 0.5em 0; */
@@ -145,6 +206,12 @@ button {
 .product-card h3,
 .product-card p {
   margin: 0.5em 0;
+}
+
+.discount-indicator {
+  background-color: red;
+  color: white;
+  text-align: center;
 }
 
 .card__brand {
@@ -202,6 +269,59 @@ button {
   grid-column: 3;
 }
 
+.cart-footer.hide {
+  display: none;
+}
+
+/* news letter styles starts here */
+.news-letter-container {
+  transition: opacity 1s ease-in-out;
+  color: #eee;
+  background-color: #555;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 35%;
+  opacity: 100%;
+}
+
+.news-letter-box {
+  padding: 0.5em;
+}
+
+.newsletter-heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.newsletter-heading h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#close {
+  opacity: 80%;
+  cursor: pointer;
+  position: relative;
+  left: 9.5em;
+}
+
+.news-letter-box p {
+  font-size: 14px;
+}
+
+#newsletterEmail {
+  height: 2.5em;
+  width: 75%;
+}
+
+#newsletterBtn {
+  cursor: pointer;
+  height: 2.5em;
+}
+/* news letter styles ends here */
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -219,4 +339,24 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 1 fraction for each column */
+  grid-template-rows: repeat(1fr);
+  /* 4 rows with 1 fraction each */
+  gap: 10px; /* Optional gap between grid items */
+}
+.grid-item {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #414141;
+}
+
+.grid-item:hover {
+  background-color: #f0a868;
+  transition-property: background-color;
+  transition-duration: 1.5s;
 }
